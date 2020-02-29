@@ -6,17 +6,51 @@
             "x": 0,
             "y": 0,
             "uniqueID": 600702,
-            "ioValues": [],
+            "ioValues": [
+                {
+                    "name": "Shape1",
+                    "ioValue": 10
+                },
+                {
+                    "name": "Shape2",
+                    "ioValue": 10
+                }
+            ],
             "topLevel": true,
             "allAtoms": [
                 {
+                    "atomType": "Input",
+                    "name": "Shape1",
+                    "x": 0.027086383601756955,
+                    "y": 0.28735632183908044,
+                    "uniqueID": 352645,
+                    "ioValues": []
+                },
+                {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 0.35651537335285505,
-                    "y": 0.5440613026819924,
+                    "x": 0.40702781844802344,
+                    "y": 0.47126436781609193,
                     "uniqueID": 511820,
-                    "ioValues": [],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1, Input2){\n  return Sphere(40)        //return must be geometry;\n}\n\nreturn main(Input1, Input2)"
+                    "ioValues": [
+                        {
+                            "name": "Input1",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Input2",
+                            "ioValue": 10
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1, Input2){\n  if(JSON.stringify(Input1)!= JSON.stringify(Input2)){\n      console.log(\"not equal\");\n      throw \"Not equal\";\n  }\n  else{\n      console.log(\"Equal!\");\n  }\n  return Sphere(40)        //return must be geometry;\n}\n\nreturn main(Input1, Input2)"
+                },
+                {
+                    "atomType": "Input",
+                    "name": "Shape2",
+                    "x": 0.01903367496339678,
+                    "y": 0.6398467432950191,
+                    "uniqueID": 467936,
+                    "ioValues": []
                 },
                 {
                     "atomType": "Output",
@@ -26,7 +60,28 @@
                     "ioValues": []
                 }
             ],
-            "allConnectors": [],
+            "allConnectors": [
+                {
+                    "ap1Name": "number or geometry",
+                    "ap2Name": "Input1",
+                    "ap2Primary": false,
+                    "ap1ID": 352645,
+                    "ap2ID": 511820
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 511820
+                },
+                {
+                    "ap1Name": "number or geometry",
+                    "ap2Name": "Input2",
+                    "ap2Primary": false,
+                    "ap1ID": 467936,
+                    "ap2ID": 511820
+                }
+            ],
             "fileTypeVersion": 1
         }
     ],
